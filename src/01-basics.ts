@@ -1,4 +1,3 @@
-// (Optional) Change the names below to your friends.
 interface Friend {
     name: string;
     phone: string;
@@ -22,6 +21,21 @@ const friend1 = {
   console.log(friends[1]);
   
   //   -------------------
+  // define an appropriate data type (interface) for the colleague objects
+
+  // Contact interface
+  interface Contact {
+    email: string;
+    extension: number;
+  }
+  
+  // Colleague interface
+  interface Colleague {
+    name: string;
+    department: string;
+    contact: Contact;
+  }
+
   const colleague1 = {
     name: "Ralph Graham",
     department: "Engineering",
