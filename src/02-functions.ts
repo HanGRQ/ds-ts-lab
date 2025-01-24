@@ -68,11 +68,24 @@ console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name
 function findFriends(
     friendsArray: Friend[],
     condition: (friend: Friend) => boolean
-  ): string[] {
+): string[] {
     return friendsArray
       .filter(condition) 
       .map((friend) => friend.name); 
-  }
+}
   
-  console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
-  console.log(findFriends(friends, (friend) => friend.age < 35));
+console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
+console.log(findFriends(friends, (friend) => friend.age < 35));
+
+// Add an interest to your friend's interests array
+function addInterest(friend: Friend, interest: string): string[] {
+  if (!friend.interests) {
+    friend.interests = [];
+  }
+  friend.interests.push(interest); 
+  return friend.interests; 
+}
+
+console.log(addInterest(friends[0], 'Politics')); 
+console.log(addInterest(friends[1], 'Reading')); 
+console.log(addInterest(friends[1], 'Traveling')); 
